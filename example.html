@@ -1,0 +1,48 @@
+
+<title>example</title>
+
+<style>
+	body { margin: 0; padding: 0; }
+	#little path {
+		stroke: #ff1ec6;
+		stroke-width: 1;
+	}
+	#little text {
+		font-size: 10;
+	}
+	path {
+		stroke: #7ac6ff;
+		stroke-width: 10;
+		fill: none;
+	}
+	text {
+		fill: grey;
+		font-family: helvetica;
+		font-size:30;
+	}
+</style>
+
+<div id="big"></div>
+<div id="little"></div>
+
+<script>
+	var Progress = require('./')
+
+	!function large(){
+		var progress = new Progress().size(300)
+		big.appendChild(progress.el)
+		!function next(i){
+			progress.update(i)
+			i < 100 && setTimeout(next, 10, i+1)
+		}(1)
+	}()
+
+	!function small(){
+		var progress = new Progress().size(35).text('%d%')
+		little.appendChild(progress.el)
+		!function next(i){
+			progress.update(i)
+			i < 100 && setTimeout(next, 15, i+1)
+		}(1)
+	}()
+</script>

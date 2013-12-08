@@ -1,0 +1,22 @@
+REPORTER=dot
+
+serve: node_modules
+	@node_modules/serve/bin/serve -Slojp 0
+
+test: node_modules
+	@sed "s/'progress'/'.\/'/" < Readme.md \
+		| node_modules/jsmd/bin/jsmd
+	@node_modules/mocha/bin/_mocha -b test/*.test.js \
+		--reporter $(REPORTER) \
+		--timeout 500 \
+		--check-leaks
+
+node_modules: *.json
+	@packin install -Re \
+		--meta deps.json,package.json,component.json \
+		--folder node_modules
+
+template.js: template.jade
+	@echo "module.exports = '`jade < $<`'" > $@
+
+.PHONY: serve test

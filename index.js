@@ -7,14 +7,29 @@ var sin = Math.sin
 
 module.exports = Progress
 
+/**
+ * Progress class
+ */
+
 function Progress(){
 	this.el = domify(template)
 	this.pth = this.el.childNodes[1]
 	this.txt = this.el.lastChild
 }
 
+/**
+ * add config methods
+ */
+
 setter(Progress.prototype, 'text', '%d')
 setter(Progress.prototype, 'from', 0)
+
+/**
+ * Set the size of the circle. The default is 100px
+ *
+ * @param {Number} n
+ * @return {this}
+ */
 
 Progress.prototype.size = function(n){
 	this._radius = n/2
@@ -24,6 +39,13 @@ Progress.prototype.size = function(n){
 }
 
 Progress.prototype.size(100)
+
+/**
+ * update the display to show `n` percent completion
+ *
+ * @param {Number} n
+ * @return {this}
+ */
 
 Progress.prototype.update = function(n){
 	// draw arc
@@ -39,13 +61,14 @@ Progress.prototype.update = function(n){
 	var tbox = this.txt.getBoundingClientRect()
 	this.txt.setAttribute('x', x - tbox.width/2)
 	this.txt.setAttribute('y', y + tbox.height*.296) // TODO: cross font
+	return this
 }
 
 /**
  * Define the arc at point `to`
  *
  * @param {Number} to
- * @return {Array}
+ * @return {String}
  * @api private
  */
 

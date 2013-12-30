@@ -21,7 +21,7 @@ var Progress = require('progress-svg')
 
 ### Progress()
 
-  The Progress class
+  The Progress class. The progress circle will automatically center itself within whatever element you put it. In the example below it will be displayed in the middle of the document.
 
 ```js
 var progress = new Progress

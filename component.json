@@ -1,9 +1,12 @@
 {
-  "name": "progress",
-  "repo": "jkroso/progress",
+  "name": "progress-svg",
+  "repo": "jkroso/progress-svg",
   "description": "Circular progress indicator using SVG",
   "keywords": ["progress","SVG","loader"],
-  "dependencies": {},
-  "scripts": ["index.js"],
+  "dependencies": {
+  	"jkroso/setter-method": "0.1.0",
+  	"component/domify": "1.1.1"
+  },
+  "scripts": ["index.js", "template.js"],
   "license": "MIT"
 }

@@ -1,19 +1,18 @@
 {
-  "name": "progress",
+  "name": "progress-svg",
   "version": "0.1.0",
   "description": "Circular progress indicator using SVG",
   "keywords": ["progress","SVG","loader"],
-  "dependencies": {},
-  "devDependencies": {
-    "serve": "jkroso/serve",
-    "chai-spies": "*",
-    "mocha": "*",
-    "jsmd": "*",
-    "chai": "*"
+  "dependencies": {
+    "setter-method": "~0.1.0",
+    "domify": "~1.1.1"
   },
-  "repository": "git://github.com/jkroso/progress.git",
-  "bugs": "https://github.com/jkroso/progress/issues",
+  "devDependencies": {
+    "serve": "jkroso/serve"
+  },
+  "repository": "git://github.com/jkroso/progress-svg.git",
+  "bugs": "https://github.com/jkroso/progress-svg/issues",
   "author": "Jake Rosoman",
-  "files": ["index.js"],
+  "files": ["index.js", "template.js"],
   "license": "MIT"
 }

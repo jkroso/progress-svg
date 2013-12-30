@@ -1,7 +1,7 @@
 
 # progress-svg
 
-  Circular progress indicator using SVG
+  Circular progress indicator using SVG because, unlike canvas, SVG can be easilly styled with CSS.
 
 ## Installation
 

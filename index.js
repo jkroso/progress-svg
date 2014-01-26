@@ -49,7 +49,6 @@ Progress.prototype.size(100)
 
 Progress.prototype.update = function(n){
 	// draw arc
-	var style = getComputedStyle(this.el)
 	var box = this.el.parentNode.getBoundingClientRect()
 	var x = box.width/2
 	var y = box.height/2

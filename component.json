@@ -4,8 +4,8 @@
   "description": "Circular progress indicator using SVG",
   "keywords": ["progress","SVG","loader"],
   "dependencies": {
-  	"jkroso/setter-method": "0.1.0",
-  	"component/domify": "1.1.1"
+    "jkroso/setter-method": "0.1.0",
+    "component/domify": "1.2.0"
   },
   "scripts": ["index.js", "template.js"],
   "license": "MIT"
